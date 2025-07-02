@@ -1,11 +1,12 @@
 export const COINCAP_CONFIG = {
-  // The new v3 base URL for REST API calls
-  BASE_URL: "https://rest.coincap.io/v3/",
-  
-  // The new v3 base URL for WebSocket connections (for later use)
-  WS_BASE_URL: "wss://ws.coincap.io/v3",
 
-  // API v3 requires an authorization header with a bearer token.
+  BASE_URL: "https://rest.coincap.io/v3/",
+
+  WS_BASE_URL: "wss://wss.coincap.io",
+
+  //wss://wss.coincap.io/
+
+
   headers: {
     Authorization: `Bearer ${process.env.EXPO_PUBLIC_API_KEY}`,
   },
