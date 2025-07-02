@@ -77,29 +77,10 @@ This is a React Native application built to satisfy the requirements of a develo
 ## Project Structure
 
 The project follows a feature-based or "ducks" pattern for clarity and scalability.
-Use code with caution.
-Markdown
-.
-├── app/ # Expo Router screens and layout
-│ ├── _layout.tsx # Root layout, Redux Provider
-│ └── index.tsx # Main dashboard screen
-├── src/
-│ ├── components/ # Reusable UI components (sidebars, main content, etc.)
-│ ├── hooks/ # Custom React hooks (e.g., useWebSocket)
-│ ├── services/ # API service layer (data fetching, WebSocket)
-│ └── store/ # Redux state management
-│ ├── crypto/ # "Ducks" folder for crypto-related state
-│ │ ├── cryptoSlice.ts
-│ │ └── cryptoThunks.ts
-│ ├── hooks.ts # Typed Redux hooks
-│ └── store.ts # Main Redux store configuration
-├── .env # Environment variables (API key)
-└── tailwind.config.js # NativeWind styling configuration
 
-Generated code
 ## Architectural Decisions & Trade-offs
 
-*   **State Management (Redux Toolkit):** While a simpler solution like `useState` or Zustand was considered for managing sidebar visibility, Redux Toolkit was chosen to handle the more complex application data state (asset list, loading/error status, selected asset, watchlist). A hybrid approach was used where local UI state (`useState`) manages sidebar visibility, while Redux manages all asynchronous data. This separates concerns effectively: local state for ephemeral UI, and global state for shared application data.
+*   **State Management (Redux Toolkit):** While a simpler solution like `useState` or Zustand was considered for managing sidebar visibility, Redux Toolkit was chosen to handle the more complex application data state (asset list, loading/error status, selected asset, watchlist). A hybrid approach was used where local UI state (`useState`) manages sidebar visibility, while Redux manages all asynchronous data.
 
 *   **Async Logic (Redux Thunks):** Thunks were separated from the slice/reducer logic (`cryptoThunks.ts` and `cryptoSlice.ts`). This improves readability and maintains a clear separation between asynchronous side effects and pure state update logic.
 
