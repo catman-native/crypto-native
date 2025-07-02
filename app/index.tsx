@@ -49,7 +49,12 @@ export default function DashboardScreen() {
   };
   
   const handleToggleRightSidebar = () => {
-    if (!isLeftSidebarVisible) setIsRightSidebarVisible(!isLeftSidebarVisible);
+    if (!isLeftSidebarVisible) setIsRightSidebarVisible(!isRightSidebarVisible);
+  };
+
+   const handleWatchlistAssetSelect = (asset: Asset) => {
+    dispatch(setSelectedAssetId(asset.id));
+    setIsRightSidebarVisible(false);
   };
 
   const selectedAsset = assets.find(asset => asset.id === selectedAssetId);
@@ -82,6 +87,7 @@ export default function DashboardScreen() {
             onClose={handleToggleRightSidebar}
             assets={assets}
             watchlist={watchlist}
+            onAssetPress={handleWatchlistAssetSelect}
           />
         )}
       </View>
