@@ -1,4 +1,3 @@
-Generated markdown
 # Crypto Dashboard - React Native Developer Test
 
 This is a React Native application built to satisfy the requirements of a developer test. The app serves as a real-time cryptocurrency dashboard, fetching market data from the CoinCap API, allowing users to manage a watchlist, and displaying live price updates via WebSockets.
